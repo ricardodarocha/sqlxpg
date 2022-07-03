@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "local",
+            "connectString": "postgres://postgres:masterkey@localhost:5432/proto"
+        }
+    ]
+}
