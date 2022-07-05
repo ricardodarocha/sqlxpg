@@ -1,6 +1,6 @@
 # Template Rust Api + Postgres
 
-Template para criar uma nova api com Rust usando Actix
+Template para criar uma nova api com Rust usando Actix  
 Esta versão atualizada de newapi/ traz suporte para newapi_json com Postgres
 
 
