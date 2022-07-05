@@ -8,6 +8,7 @@ Esta versão atualizada de newapi/ traz suporte para newapi_json com Postgres
 api_folder\
 |- main.rs
 |- routes.rs
+|- models.rs
 ```
 
 A maneira mais rápida criando este repositório é instalar o **Rust** e clonar o repositório
