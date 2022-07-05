@@ -10,8 +10,10 @@ api_folder\
 |- routes.rs
 ```
 
-A maneira mais rápida criando este repositório é
-```
+A maneira mais rápida criando este repositório é instalar o **Rust** e clonar o repositório
+
+```Shell
 git clone https://github.com/ricardodarocha/newapi_json.git
-cd newapi_json 
+cd sqlxpg 
 cargo run -- 9090
+```
