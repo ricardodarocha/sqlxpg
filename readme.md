@@ -18,4 +18,6 @@ git clone https://github.com/ricardodarocha/newapi_json.git
 cd sqlxpg 
 cargo run -- 9090
 ```
-https://kotiri.com/2018/01/31/postgresql-diesel-rust-types.html
+
+
+> **Note:** [Confira os tipos de dados disponíveis para Rust + Postgre](https://kotiri.com/2018/01/31/postgresql-diesel-rust-types.html)
