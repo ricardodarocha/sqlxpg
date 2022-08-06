@@ -8,3 +8,9 @@ pub struct User {
     pub email: String,
     pub senha: String
 }
+#[derive(Serialize, Deserialize)]
+pub struct NewUser {
+    pub nome: String,
+    pub email: String,
+    pub senha: String
+}

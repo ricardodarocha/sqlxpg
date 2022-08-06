@@ -19,7 +19,8 @@ use std::net::TcpListener;
 use api::routes::{
     ping,
     pong,
-    user
+    user,
+    post_user,
 };
 
 
@@ -29,7 +30,7 @@ use api::user::*;
 async fn main() -> std::io::Result<()> {
 
     std::env::set_var("RUST_LOG", "debug");
-    std::env::set_var("RUST_BACKTRACE", "1");
+    // std::env::set_var("RUST_BACKTRACE", "1");
     env_logger::init();
     
     let pool = PgPool::connect("postgres://postgres:masterkey@localhost:5432/proto")
@@ -44,6 +45,7 @@ async fn main() -> std::io::Result<()> {
         .service(ping)
         .service(pong)
         .service(user)
+        .service(post_user)
     })
     .bind(("localhost", 8089))?
     .run()

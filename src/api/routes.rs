@@ -19,7 +19,7 @@ use actix_web::{
   use sqlx::postgres::{PgPool, PgPoolOptions, PgRow};
   use sqlx::{FromRow, Row};
 
-use crate::model::usermodel::User;
+use crate::model::usermodel::{User, NewUser};
 
 #[get("/ping")]
 pub async fn ping(pool: web::Data<PgPool>) -> impl Responder {
@@ -48,5 +48,24 @@ pub async fn user(pool: web::Data<PgPool>) -> HttpResponse {
         .await
         .unwrap();
 
-    HttpResponse::Ok().json(users)
+    HttpResponse::Ok().json(users) 
+}
+
+#[post("/user")]
+pub async fn post_user(pool: web::Data<PgPool>, usr: web::Json<NewUser>) -> HttpResponse {
+    let usercreated = sqlx::query_as::<_, User>(
+        "insert into users
+            (nome, email, senha) 
+            VALUES ($1, $2, $3)
+            returning id, nome, email, senha")
+            .bind(usr.nome.to_owned())
+            .bind(usr.email.to_owned())
+            .bind(usr.senha.to_owned())
+        .fetch_one(pool.get_ref())
+        .await
+        .unwrap();
+        
+      HttpResponse::Ok()
+      .status(StatusCode::CREATED)
+      .json(usercreated)
 }
