@@ -16,7 +16,12 @@ A maneira mais rápida criando este repositório é instalar o **Rust** e clonar
 ```Shell
 git clone https://github.com/ricardodarocha/newapi_json.git
 cd sqlxpg 
-cargo run -- 9090
+cargo run
+```
+
+navegue
+```
+GET localhost:8089/user
 ```
 
 
